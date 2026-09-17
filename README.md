@@ -23,14 +23,23 @@ private to the data
 Filters students originating from Visayas whose specialization is Communication.
 <table>
   <tr>
+    
     import pandas as pd
+    
     df = pd.read_excel ("board2.xlsx")
+    
     df["Average"] = df[["Math", "Electronics", "GEAS", "Communication"]].mean(axis=1)
+    
     df['Hometown'] == "Visayas"
+    
     df["Track"] == "Communication"
+    
     (df["Hometown"] == "Visayas") & (df["Track"] == "Communication")
+    
     [["Name", "Gender", "Math", "Electronics", "Average"]]
-    VisComm = df[(df["Hometown"] == "Visayas") & (df["Track"] == "Communication")][["Name", "Gender", "Math", "Electronics", "Average"]]
+    
+    VisComm = df[(df["Hometown"] == "Visayas") & (df["Track"] == "Communication")]
+                [["Name", "Gender", "Math", "Electronics", "Average"]]
     
   </tr>
 </table>
